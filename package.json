@@ -1,0 +1,57 @@
+{
+  "name": "xmlhttprequest-mock",
+  "description": "Mock for XMLHttpRequest that works both in Browser and Node.js and can override globals",
+  "author": {
+    "name": "The National Library of Finland"
+  },
+  "keywords": [
+    "xhr",
+    "async",
+    "https",
+    "client",
+    "test",
+    "fake",
+    "net"
+  ],
+  "homepage": "https://github.com/natlibfi/xmlhttprequest-mock",
+  "bugs": {
+    "url": "https://github.com/natlibfi/xmlhttprequest-mock/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:natlibfi/xmlhttprequest-mock.git"
+  },
+  "license": " GPL-3.0",
+  "version": "1.0.0",
+  "main": "lib/main",
+  "scripts": {
+    "lint": "jshint .",
+    "test-nodejs": " istanbul cover --dir coverage/nodejs _mocha -- test/*.spec.js test/nodejs/*.spec.js",
+    "test-browser": "karma start",
+    "test": "npm run test-nodejs && npm run test-browser",
+    "cover-nodejs": "npm run test-nodejs && istanbul check-coverage coverage/nodejs/coverage.json",
+    "cover-browser": "npm run test-browser && istanbul check-coverage coverage/browser/coverage-final.json",
+    "cover": "npm run test && npm run combine-coverage && istanbul check-coverage coverage/combined/coverage-final.json",
+    "check": "npm run lint && npm run cover",
+    "travisci": "npm run check",
+    "publish-to-npm": "npm install && npm run check && npm publish",
+    "combine-coverage": "istanbul-combine -d coverage/combined -r html -r lcov -r json coverage/nodejs/coverage.json coverage/browser/coverage-final.json"
+  },
+  "dependencies": {
+    "es6-polyfills": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.2",
+    "istanbul": "^0.4.2",
+    "istanbul-combine": "^0.3.0",
+    "karma": "^0.13.19",
+    "karma-coverage": "^0.5.5",
+    "karma-mocha": "^0.2.1",
+    "karma-requirejs": "^0.2.3",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "phantomjs-prebuilt": "^2.1.5",
+    "codeclimate-test-reporter": "^0.1.1"
+  }
+}
