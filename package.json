@@ -6,8 +6,11 @@
   },
   "keywords": [
     "xhr",
+    "mock",
+    "xml",
+    "http",
+    "request",
     "async",
-    "https",
     "client",
     "test",
     "fake",
