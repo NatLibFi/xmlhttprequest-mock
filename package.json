@@ -25,7 +25,7 @@
     "url": "git@github.com:natlibfi/xmlhttprequest-mock.git"
   },
   "license": " GPL-3.0+",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/main",
   "scripts": {
     "lint": "jshint .",
