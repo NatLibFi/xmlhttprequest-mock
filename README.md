@@ -125,4 +125,4 @@ The factory function takes a single argument which (If not undefined) will overr
 
 Copyright (c) 2016 **University Of Helsinki (The National Library Of Finland)**
 
-This project's source code is licensed under the terms of **GNU General Public License Version 3**.
+This project's source code is licensed under the terms of **GNU General Public License Version 3**, or any later version.

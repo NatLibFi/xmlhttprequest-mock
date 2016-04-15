@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git@github.com:natlibfi/xmlhttprequest-mock.git"
   },
-  "license": " GPL-3.0",
+  "license": " GPL-3.0+",
   "version": "1.0.1",
   "main": "lib/main",
   "scripts": {
