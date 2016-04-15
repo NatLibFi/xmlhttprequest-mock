@@ -26,12 +26,12 @@
  *
  **/
 
-define(['chai', '../../lib/main'], function(chai, xhrMockFactory) {  
+define(['chai/chai', '../../lib/main'], function(chai, xhrMockFactory) {  
 
   'use strict';
   
   var expect = chai.expect;
-  
+
   describe('browser', function() {
     
     describe('factory', function() {

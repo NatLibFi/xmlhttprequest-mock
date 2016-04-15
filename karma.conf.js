@@ -5,7 +5,8 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
     reporters: ['progress', 'coverage'],
     preprocessors: {
-      'lib/*.js': ['coverage']
+      'lib/*.js': 'coverage',
+      'test/browser/main.js': 'requirejs'
     },
     coverageReporter: {
       subdir: 'browser',
@@ -18,10 +19,20 @@ module.exports = function(config) {
         }
       ]
     },
+    requirejsPreprocessor: {
+      config: {
+        baseUrl: '/base'
+      },
+      testRegexp: '^/base/test/browser/[^/].+\.spec\.js$'
+    },
     files: [
       'test/browser/main.js',
       {
-        pattern: 'test/**/*.spec.js',
+        pattern: 'test/browser/*.spec.js',
+        included: false
+      },
+      {
+        pattern: 'test/*.spec.js',
         included: false
       },
       {

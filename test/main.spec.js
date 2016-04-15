@@ -31,7 +31,7 @@
   'use strict';
 
   if (typeof define === 'function' && define.amd) {
-    define(['chai', '../lib/main'], factory);
+    define(['chai/chai', '../lib/main'], factory);
   } else if (typeof module === 'object' && module.exports) {
     module.exports = factory(require('chai'), require('../lib/main'));
   }
