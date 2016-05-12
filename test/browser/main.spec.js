@@ -50,6 +50,7 @@ define(['chai/chai', '../../lib/main'], function(chai, xhrMockFactory) {
             expect(xhr_mock.restore()).to.equal(orig_xhr);
 
           });
+
         });
         
       });

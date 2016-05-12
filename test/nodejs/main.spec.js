@@ -42,6 +42,16 @@ module.exports = (function() {
 
         describe('#restore', function() {
 
+          it('Should not affect global environment', function() {
+
+            var xhr_mock = xhrMockFactory(1);
+
+            xhr_mock.create();
+            
+            expect(xhr_mock.restore()).to.be.undefined /*jshint -W030 */;
+
+          });
+
           it('Should return and restore the original function which was available globally', function() {
 
             var xhr_mock,

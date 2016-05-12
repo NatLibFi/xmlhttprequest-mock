@@ -91,6 +91,16 @@ function factory(chai, xhrMockFactory)
 
             describe('instance', function() {
 
+              it('Should throw because #open is called with invalid arguments', function() {
+
+                var Constructor = xhrMockFactory().create(),
+
+                instance = new Constructor();
+
+                expect(instance.open).to.throw(Error, /^Not enough arguments to XMLHttpRequest.open$/);
+
+              });
+
               it('Should invoke the load callback and build the response with default options', function(done) {
 
                 var Constructor = xhrMockFactory().create(),
@@ -102,9 +112,7 @@ function factory(chai, xhrMockFactory)
                     
                     expect(instance.status).to.equal(200);
                     expect(instance.body).to.be.empty;
-                    expect(instance.getAllResponseHeaders()).to.eql({
-                      'Content-Length': '0'
-                    });
+                    expect(instance.getAllResponseHeaders()).to.eql('Content-Length=0\r\n');
                     
                     done();
                     
@@ -113,7 +121,7 @@ function factory(chai, xhrMockFactory)
                   }
                 });
 
-                instance.open();
+                instance.open('foo', 'bar');
                 instance.send();
 
               });
@@ -122,7 +130,8 @@ function factory(chai, xhrMockFactory)
 
                 var Constructor = xhrMockFactory().create({
                   headers: {
-                    'X-Test': 'foobar'
+                    'X-Foo': 'bar',
+                    'X-Bar': 'foo'
                   }
                 }),
                 instance = new Constructor();
@@ -132,7 +141,8 @@ function factory(chai, xhrMockFactory)
 
                     expect(instance.status).to.equal(200);
                     expect(instance.body).to.be.empty;
-                    expect(instance.getResponseHeader('X-Test')).to.equal('foobar');
+                    expect(instance.getResponseHeader('X-Foo')).to.equal('bar');
+                    expect(instance.getAllResponseHeaders()).to.eql('X-Foo=bar\r\nX-Bar=foo\r\n');
 
                     done();
 
@@ -141,7 +151,7 @@ function factory(chai, xhrMockFactory)
                   }
                 });
 
-                instance.open();
+                instance.open('foo', 'bar');
                 instance.send();
 
               });
@@ -157,9 +167,7 @@ function factory(chai, xhrMockFactory)
                   try {
                     
                     expect(instance.status).to.equal(200);
-                    expect(instance.getAllResponseHeaders()).to.eql({
-                      'Content-Length': '0'
-                    });
+                    expect(instance.getAllResponseHeaders()).to.eql('Content-Length=0\r\n');
                     expect(instance.body).to.be.empty;
                     
                     done();
@@ -169,7 +177,7 @@ function factory(chai, xhrMockFactory)
                   }
                 });
 
-                instance.open();
+                instance.open('foo', 'bar');
                 instance.send();
 
               });
