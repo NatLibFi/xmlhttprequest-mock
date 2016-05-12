@@ -23,7 +23,7 @@ module.exports = function(config) {
       config: {
         baseUrl: '/base'
       },
-      testRegexp: '^/base/test/browser/[^/].+\.spec\.js$'
+      testRegexp: '^/base/test/(browser/)?[^/].+\.spec\.js$'
     },
     files: [
       'test/browser/main.js',
