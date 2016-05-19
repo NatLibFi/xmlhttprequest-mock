@@ -112,7 +112,7 @@ function factory(chai, xhrMockFactory)
                     
                     expect(instance.status).to.equal(200);
                     expect(instance.body).to.be.empty;
-                    expect(instance.getAllResponseHeaders()).to.eql('Content-Length=0\r\n');
+                    expect(instance.getAllResponseHeaders()).to.be.null;
                     
                     done();
                     
@@ -167,7 +167,7 @@ function factory(chai, xhrMockFactory)
                   try {
                     
                     expect(instance.status).to.equal(200);
-                    expect(instance.getAllResponseHeaders()).to.eql('Content-Length=0\r\n');
+                    expect(instance.getAllResponseHeaders()).to.be.null;
                     expect(instance.body).to.be.empty;
                     
                     done();
