@@ -1,4 +1,4 @@
-# XMLHttpRequest Mock [![NPM Version](https://img.shields.io/npm/v/xmlhttprequest-mock.svg)](https://npmjs.org/package/xmlhttprequest-mock) [![Build Status](https://travis-ci.org/NatLibFi/xmlhttprequest-mock.svg)](https://travis-ci.org/NatLibFi/xmlhttprequest-mock) [![Test Coverage](https://codeclimate.com/github/NatLibFi/xmlhttprequest-mock/badges/coverage.svg)](https://codeclimate.com/github/NatLibFi/xmlhttprequest-mock/coverage)
+# XMLHttpRequest Mock [![NPM Version](https://img.shields.io/npm/v/@natlibfi/xmlhttprequest-mock.svg)](https://npmjs.org/package/@natlibfi/xmlhttprequest-mock) [![Build Status](https://travis-ci.org/NatLibFi/xmlhttprequest-mock.svg)](https://travis-ci.org/NatLibFi/xmlhttprequest-mock) [![Test Coverage](https://codeclimate.com/github/NatLibFi/xmlhttprequest-mock/badges/coverage.svg)](https://codeclimate.com/github/NatLibFi/xmlhttprequest-mock/coverage)
 
 Mock for XMLHttpRequest that works both in Browser and Node.js and can override globals
 
@@ -125,4 +125,4 @@ The factory function takes a single argument which (If not undefined) will overr
 
 Copyright (c) 2016 **University Of Helsinki (The National Library Of Finland)**
 
-This project's source code is licensed under the terms of **GNU General Public License Version 3**, or any later version.
+This project's source code is licensed under the terms of **GNU Lesser General Public License Version 3**, or any later version.
